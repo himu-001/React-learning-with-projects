@@ -10,11 +10,18 @@ function App() {
   // let counter = 5;
 
   function addValue() {
-    counter = counter + 1;
-    if (counter > 20) {
-      return  counter = 20;
-    }
-    setCounter(counter)
+    // counter = counter + 1;
+    // if (counter > 20) {
+    //   return  counter = 20;
+    // }
+
+    //All the three method below is valid but for code readability use 1 and 2 
+    setCounter((prevCounter) => {
+      return prevCounter + 1;
+    })
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter(prevCounter => prevCounter + 1);
+
   }
   const removeValue = () => {
     counter -= 1
